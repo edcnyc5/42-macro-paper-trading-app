@@ -17,10 +17,10 @@ Local-only paper trading app: look up a ticker, place buy/sell orders at the lat
 
 ```mermaid
 flowchart LR
-  Browser[Next.js UI\nReact + Tailwind + TanStack Query] -->|HTTP JSON| Api[FastAPI]
-  Api --> Services[Service layer\n(trade execution + snapshot refresh)]
+  Browser["Next.js UI<br/>React + Tailwind<br/>TanStack Query"] -->|HTTP JSON| Api[FastAPI]
+  Api --> Services["Service layer<br/>Trades + snapshots"]
   Services --> Db[(SQLite + SQLAlchemy)]
-  Services --> YF[yfinance\n(market quotes)]
+  Services --> YF["yfinance<br/>Market quotes"]
 ```
 
 **Why this split**
